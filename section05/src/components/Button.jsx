@@ -1,5 +1,17 @@
 const Button = ({text, color, children}) => {
-    return (<button style={{color: color}}>
+    // 이벤트 객체
+    const onClickButton = (e) => {
+        console.log(e);
+        console.log(text);
+    }
+    return (
+        <button 
+        onClick={onClickButton}
+        // onMouseEnter={onClickButton} // 마우스를 갖다댔을 때
+        // onClick={()=>{ // 이벤트 핸들러
+        //     console.log(text);
+        // }} 
+        style={{color: color}}>
         {text} - {color.toUpperCase()}
         {children}
         </button>
